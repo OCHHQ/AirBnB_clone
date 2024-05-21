@@ -14,6 +14,8 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """Initialize the BaseModel"""
+        from models.engine.file_storage import storage
+
         if kwargs:
             kwargs.pop('__class__', None)
             for key, value in kwargs.items():
@@ -24,10 +26,14 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
+            storage.now(self)
 
     def save(self):
         """Updates updated_at with current datetime"""
+        from models.engine.file_storage import storage
+
         self.updated_at = datetime.now()
+        storage.save()
         # Implement the logic to save to storage (e.g., file or database)
 
     def to_dict(self):
