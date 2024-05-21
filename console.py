@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 Command interpreter for the AirBnB clone project.
 """
@@ -126,4 +127,3 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
