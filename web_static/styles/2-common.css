@@ -2,8 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-}
-
-.content {
-    min-height: calc(100vh - 130px);
+    font-size: 14px;
+    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #484848;
 }
